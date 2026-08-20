@@ -51,8 +51,8 @@ export const Timer = () => {
     return (
         <>
             <section className='flex flex-col items-center justify-center gap-5 bg-amber-300 w-150 h-62.5 rounded-2xl shadow-2xs'>
-                <div className='flex flex-row gap-2 self-start ml-7'>
-                    <Watch />
+                <div className='flex flex-row items-center gap-2 self-start ml-7'>
+                    <Watch size={15} />
                     <h2>Enfoque</h2>
                 </div>
                 <div className='flex flex-row gap-5'>
