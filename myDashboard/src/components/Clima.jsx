@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 export const Clima = () => {
 
     const apiKey = import.meta.env.VITE_API_KEY;
-    
+
     const [clima, setClima] = useState({
         temp: null,
         ubicacion: "",
@@ -14,8 +14,6 @@ export const Clima = () => {
         descripcion: "",
         iconId: ""
     })
-
-
 
     useEffect(() => {
         const fetchData = async () => {
@@ -38,19 +36,19 @@ export const Clima = () => {
     const climaIcon = (id) => {
         switch (true) {
             case (id >= 200 && id < 300):
-                return <CloudLightning />;
+                return <CloudLightning color='#3B82F6' size={30} />;
             case (id >= 300 && id < 400):
-                return <CloudRainWind />;
+                return <CloudRainWind color='#3B82F6' size={30} />;
             case (id >= 500 && id < 600):
-                return <Wind />;
+                return <Wind color='#3B82F6' size={30} />;
             case (id >= 600 && id < 700):
-                return <Snowflake />;
+                return <Snowflake color='#3B82F6' size={30} />;
             case (id >= 700 && id < 800):
-                return <Snowflake />;
+                return <Snowflake color='#3B82F6' size={30} />;
             case (id === 800):
-                return <SunMedium />;
+                return <SunMedium color='#3B82F6' size={30} />;
             case (id >= 801 && id < 810):
-                return <Cloudy size={40} />;
+                return <Cloudy color='#3B82F6' size={30} />;
             default:
                 return <SunSnow />;
         }
@@ -58,18 +56,19 @@ export const Clima = () => {
 
     return (
         <>
-            <section className='flex flex-col items-center justify-center gap-5 bg-amber-300 w-150 h-62.5 rounded-2xl shadow-2xs'>
-                <div className='flex flex-row items-center gap-2 self-start ml-7'>
-                    <Cloudy size={15} />
-                    <h2>Clima</h2>
+            <section className='flex flex-col justify-between p-5 bg-white w-150 h-40 rounded-2xl shadow-2xs overflow-hidden'>
+                <div className='flex flex-row items-center gap-2 self-start'>
+                    <Cloudy size={14} />
+                    <h2 className='text-sm'>Clima</h2>
                 </div>
-                <div className='flex flex-row w-90 gap-5 justify-around items-center'>
 
-                    <span className='w-15 h-15 items-center shadow-2xl rounded-2xl  '>
+                <div className='flex flex-row w-full gap-5 justify-around items-center flex-1'>
+
+                    <span className='flex items-center justify-center w-12 h-12 shadow-2xs rounded-2xl bg-gray-100'>
                         {climaIcon(clima.iconId)}
                     </span>
 
-                    <div className='w-100 h-40 flex flex-col items-start justify-center gap-1'>
+                    <div className='flex flex-col items-start justify-center gap-1'>
                         <p className='font-bold text-2xl'>
                             {clima.temp ? (clima.temp - 273.15).toFixed(1) : "..."} °C
                         </p>
@@ -79,9 +78,10 @@ export const Clima = () => {
                     </div>
 
                     <div>
-                        <p className='text-base'>HUMEDAD</p>
-                        <p className='text-sm italic font-bold'>{clima.humedad}%</p>
+                        <p className='text-sm text-gray-500'>HUMEDAD</p>
+                        <p className='text-lg font-bold'>{clima.humedad}%</p>
                     </div>
+
                 </div>
             </section>
         </>

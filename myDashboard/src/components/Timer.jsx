@@ -50,23 +50,27 @@ export const Timer = () => {
 
     return (
         <>
-            <section className='flex flex-col items-center justify-center gap-5 bg-amber-300 w-150 h-62.5 rounded-2xl shadow-2xs'>
+            <section className='flex flex-col items-center justify-center gap-5 bg-white w-150 h-63 rounded-2xl shadow-2xs'>
+
                 <div className='flex flex-row items-center gap-2 self-start ml-7'>
-                    <Watch size={15} />
-                    <h2>Enfoque</h2>
+                    <Watch size={14} />
+                    <h2 className='text-sm'>Enfoque</h2>
                 </div>
+
                 <div className='flex flex-row gap-5'>
-                    <button onClick={tiemePomodoro} className='bg-gray-500 rounded-2xl h-10 w-30 text-white hover:bg-gray-900 cursor-pointer'>25 min</button>
-                    <button onClick={tiemeHora} className='bg-gray-500 rounded-2xl h-10 w-30 text-white hover:bg-gray-900 cursor-pointer'>1 hs</button>
-                    <button onClick={tiemeHoraMedia} className='bg-gray-500 rounded-2xl h-10 w-30 text-white hover:bg-gray-900 cursor-pointer'>1:30 hs</button>
+                    <button onClick={tiemePomodoro} className='bg-blue-400 rounded-xl h-10 w-30 text-white hover:bg-blue-600 cursor-pointer'>25 min</button>
+                    <button onClick={tiemeHora} className='bg-blue-400 rounded-xl h-10 w-30 text-white hover:bg-blue-600 cursor-pointer'>1 hs</button>
+                    <button onClick={tiemeHoraMedia} className='bg-blue-400 rounded-xl h-10 w-30 text-white hover:bg-blue-600 cursor-pointer'>1:30 hs</button>
                 </div>
+
                 <div>
-                    <h1 className='text-4xl text-center'>{Math.floor(time/60)} : { time % 60 < 10 ? '0' + time % 60 : time % 60 }</h1>
+                    <h1 className='text-4xl text-center'>{Math.floor(time / 60)} : {time % 60 < 10 ? '0' + time % 60 : time % 60}</h1>
                 </div>
+
                 <div className='flex flex-row gap-5'>
-                    <button onClick={handleStart} className='bg-gray-500 rounded-2xl h-10 w-30 text-white hover:bg-gray-900 cursor-pointer'>Iniciar</button>
-                    <button onClick={handlePause} className='bg-gray-500 rounded-2xl h-10 w-30 text-white hover:bg-gray-900 cursor-pointer'>Pausar</button>
-                    <button onClick={handleReset} className='bg-gray-500 rounded-2xl h-10 w-30 text-white hover:bg-gray-900 cursor-pointer'>Reiniciar</button>
+                    <button onClick={handleStart} className='bg-gray-500 rounded-xl h-10 w-30 text-white hover:bg-gray-900 cursor-pointer'>Iniciar</button>
+                    <button onClick={handlePause} className='bg-gray-500 rounded-xl h-10 w-30 text-white hover:bg-gray-900 cursor-pointer'>Pausar</button>
+                    <button onClick={handleReset} className='bg-gray-500 rounded-xl h-10 w-30 text-white hover:bg-gray-900 cursor-pointer'>Reiniciar</button>
                 </div>
             </section>
         </>
