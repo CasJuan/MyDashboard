@@ -3,6 +3,7 @@ import { Mercados } from './components/Mercados'
 import { Clima } from './components/Clima'
 import { Hora } from './components/Hora'
 import { Tareas } from './components/Tareas'
+import { Whislist } from './components/Whislits'
 
 export const Dashboard = () => {
   return (
@@ -16,6 +17,7 @@ export const Dashboard = () => {
         <Hora />
         <Timer />
         <Tareas/>
+        <Whislist/>
       </div>
     </div>
   )
