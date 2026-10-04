@@ -4,6 +4,7 @@ import { Clima } from './components/Clima'
 import { Hora } from './components/Hora'
 import { Tareas } from './components/Tareas'
 import { Whislist } from './components/Whislits'
+import { Frases } from './components/Frases'
 
 export const Dashboard = () => {
   return (
@@ -18,6 +19,7 @@ export const Dashboard = () => {
         <Timer />
         <Tareas/>
         <Whislist/>
+        <Frases/>
       </div>
     </div>
   )
