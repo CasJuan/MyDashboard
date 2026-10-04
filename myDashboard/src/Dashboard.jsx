@@ -10,16 +10,22 @@ export const Dashboard = () => {
   return (
     <div
       className='min-h-screen w-full pt-12'
-      style={{ background: 'linear-gradient(301deg, rgba(29, 0, 252, 1) 0%, rgba(255, 255, 255, 1) 100%)' }}
+      style={{ background: 'linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%)' }}
     >
       <div className='grid grid-cols-2 gap-8 max-w-fit mx-auto'>
         <Clima />
-        <Mercados />
+        <div className='row-span-2'>
+          <Tareas />
+        </div>
         <Hora />
+        <div className='row-span-2'>
+          <Whislist />
+        </div>
+        <Mercados />
         <Timer />
-        <Tareas/>
-        <Whislist/>
-        <Frases/>
+        <div className='col-span-2'>
+          <Frases />
+        </div>
       </div>
     </div>
   )

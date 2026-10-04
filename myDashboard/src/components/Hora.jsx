@@ -26,10 +26,10 @@ export const Hora = () => {
 
     return (
         <>
-            <section className='flex flex-col items-center justify-center gap-5 bg-white w-150 h-63 rounded-2xl shadow-2xs'>
+            <section className='flex flex-col items-center justify-center gap-5 bg-[#2e2e2e] w-150 h-63 rounded-2xl shadow-2xs'>
                 <div className='flex flex-col gap-3'>
-                    <h1 className='text-6xl text-center'>{hora}</h1>
-                    <h2 className='text-sm italic text-center'>{fecha}</h2>
+                    <h1 className='text-6xl text-center text-gray-100'>{hora}</h1>
+                    <h2 className='text-sm italic text-center text-gray-400'>{fecha}</h2>
                 </div>
             </section>
         </>

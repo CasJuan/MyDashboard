@@ -9,8 +9,7 @@ export const Frases = () => {
         const fetchFrase = async () => {
             const resp = await fetch('https://positive-api.online/phrases/esp')
             const data = await resp.json()
-            const newFrase = data.text
-            setFrase(newFrase);
+            setFrase(data[Math.floor(Math.random() * data.length)].text); 
         }
         fetchFrase()
     }, [])
@@ -18,9 +17,9 @@ export const Frases = () => {
 
     return (
         <>
-            <section className='bg-white w-150 h-63 rounded-2xl shadow-2xs'>
+            <section className='w-full h-63 rounded-2xl shadow-2xs bg-[#2e2e2e]'>
                 <div className='flex flex-col items-center justify-center gap-5 h-full'>
-                    <p className='text-sm text-center italic'>"{frase}"</p>
+                    <blockquote className='text-center italic text-lg text-gray-100'>"{frase}"</blockquote>
                 </div>
             </section>
         </>
